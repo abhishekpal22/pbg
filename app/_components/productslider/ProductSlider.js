@@ -9,12 +9,13 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination';
 
 // import required modules
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination,FreeMode } from 'swiper/modules';
 import { Card, CardContent, CardMedia, Typography, } from "@mui/material";
+import "./productSlider.css"
 
 
 export default function ProductSlider({ products,slidesPerView }) {
-    console.log("products", products);
+    const baseURL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
     return (
         <>
@@ -25,22 +26,24 @@ export default function ProductSlider({ products,slidesPerView }) {
                     delay: 25000,
                     disableOnInteraction: false,
                 }}
+                freeMode={true}
                 pagination={{
                     clickable: true,
                 }}
-                modules={[Navigation, Autoplay, Pagination]} className="product-slider">
+                modules={[Navigation, Autoplay, Pagination,FreeMode]} className="product-slider">
                 {
                     products &&
                     products?.map((product) => (
                         <SwiperSlide key={product.id}>
                             <Card >
                                 <CardMedia
-                                    sx={{ height: 250 }}
-                                    image={product.image}
+                                    sx={{ height: 350 }}
+                                    image={baseURL+product.image.url}
                                     title={product.title}
+                                    component="img"
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h6" component="div">
+                                    <Typography className="card-title" variant="h5" >
                                         {product.title}
                                     </Typography>
                                 </CardContent>
