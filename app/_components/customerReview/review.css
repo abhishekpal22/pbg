@@ -1,0 +1,22 @@
+.review-wrapper{
+    display: flex;
+align-items: center;
+gap: 20px;
+border: 1px solid #e2e2e2;
+border-radius: 5px;
+padding: 40px 60px ;
+}
+.review-img{
+    flex: 1 1 30%;
+    
+}
+.review-img img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.review-body{
+    flex: 1 1 70%;
+}

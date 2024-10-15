@@ -15,10 +15,12 @@ import s1 from "../../_assets/s1.webp"
 import s2 from "../../_assets/s2.webp"
 import s3 from "../../_assets/s3.webp"
 import useGetData from "@/app/utlis/customHooks/useGetData";
+import { mainSlider } from "@/app/utlis/apiUrls";
 
 export default function Slider() {
   const baseURL = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const { getData, isLoading, error } = useGetData(`${baseURL}/api/main-sliders?populate=*`)
+  
+  const { getData} = useGetData(mainSlider)
   const images =  getData?.data.flatMap(items=> items.image)
   
   return (
@@ -45,6 +47,7 @@ export default function Slider() {
                 width={0}
                 height={0}
                 sizes="100vw"
+                layout="responsive"
                 placeholder="blur"
                 blurDataURL="data:..."
                 alt="pal-brothers-group"

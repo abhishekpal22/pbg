@@ -6,10 +6,16 @@ import Image from "next/image"
 import "./footer.css"
 
 export const Footer = () => {
+    let date = new Date()
+    let fullYear = date.getFullYear()
+
     return (
         <footer className="mt-40">
             <Grid2 container spacing={2}>
-                <Grid2 size={4}>
+                <Grid2 size={12}>
+                <Typography variant="body2" sx={{ p: 2, textAlign: "center" }} color="initial">Copyright  &copy; 2013-{fullYear} Pal Brothers Group All rights reserved.</Typography>
+                </Grid2>
+                {/* <Grid2 size={4}>
                     <Box className="footer-link">
                         <List className='menu-ul'>
                             <ListItem>
@@ -42,7 +48,7 @@ export const Footer = () => {
                         Pal Brothers Vastralaya, Belwa sengar, Rudhauli-Bakhira Marg,
                         Sant Kabir Nagar, 272148
                     </Typography>
-                </Grid2>
+                </Grid2> */}
             </Grid2>
         </footer>
     )

@@ -22,10 +22,28 @@
     background: var(--dark-blue);width: 40px;border-radius: 20px;
 }
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{bottom: 0px;}
+.card{border: 1px solid #e2e2e2;}
+.card-img{overflow: hidden;}
+.card img{transition: all .3s ease-in-out;}
+.card:hover img{transition: all .3s ease-in-out;transform: scale(1.05);}
+.card:hover{border:1px dashed var(--dark-blue);}
+.card .card-body{padding: 10px;}
 .card-title{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     position: relative;
     text-transform: capitalize;
     line-height: 26px;
+    text-align: center;
+}
+
+
+@media(max-width:900px){
+    .swiper-button-prev, .swiper-button-next{
+        width: 20px;
+        height: 20px;
+    }
+    .swiper-button-prev:after, .swiper-button-next:after {
+        font-size: 10px;
+    }
 }
