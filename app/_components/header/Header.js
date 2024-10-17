@@ -1,6 +1,6 @@
 "use client"
 import { Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image';
 import "./header.css"
 import Link from 'next/link';
@@ -9,41 +9,18 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import CallIcon from '@mui/icons-material/Call';
 import MenuIcon from '@mui/icons-material/Menu';
 const drawerWidth = 240;
-// const container = window !== undefined ? () => window().document.body : undefined;
 const Header = () => {
 
-    // const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
     const baseURL = process.env.NEXT_PUBLIC_STRAPI_URL;
-    // debugger
 
     const { getData } = useGetData(`${baseURL}/api/logos?populate=*`)
     const logo = getData?.data[0].image.url;
 
-
-    const controlHeader = () => {
-        if (typeof window !== "undefined") {
-            if (window.scrollY > lastScrollY) {
-                setIsVisible(false)
-            } else {
-                setIsVisible(true)
-            }
-            setLastScrollY(window.scrollY)
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", controlHeader)
-        return () => {
-            window.removeEventListener("scroll", controlHeader)
-        }
-    }, [lastScrollY])
 
     const scrollToSection = (e) => {
         e.preventDefault();
@@ -62,7 +39,7 @@ const Header = () => {
 
 
     return (
-        <header className={`header visible ${isVisible ? 'visible' : 'hidden'}`}>
+        <header className={`header visible`}>
             <Container>
                 <Box className="row" >
                     <Box className="left-menu" sx={{ display: { xs: 'none', md: 'block' } }}>
@@ -79,7 +56,7 @@ const Header = () => {
                             </ListItem>
                             <ListItem>
                                 <ListItemButton component="a" href="#kids" onClick={scrollToSection}>
-                                    Kid's
+                                    Kids
                                 </ListItemButton>
                             </ListItem>
 
@@ -155,7 +132,7 @@ const Header = () => {
                         </ListItem>
                         <ListItem>
                             <ListItemButton component="a" href="#kids" onClick={scrollToSection}>
-                                Kid's
+                                Kids
                             </ListItemButton>
                         </ListItem>
                         <ListItem>

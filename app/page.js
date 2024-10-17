@@ -61,7 +61,7 @@ const Home = () => {
 
         <Box className="mt-40">
           <Box >
-            <Typography variant='h4' className="main-heading">Top Saree's</Typography>
+            <Typography variant='h4' className="main-heading">Top Saree</Typography>
             <ProductSlider products={sarees} />
           </Box>
 
@@ -80,24 +80,22 @@ const Home = () => {
             <ProductSlider products={jeans} slidesPerView={4} />
           </Box>
 
-          {/* <Divider className='mt-40' /> */}
-
           <Box className="mt-40" id="kids">
-            <Typography variant='h4' className="main-heading">Girl Kid's</Typography>
+            <Typography variant='h4' className="main-heading">Girl Kids</Typography>
             <ProductSlider products={gKids} slidesPerView={4} />
           </Box>
           <Box className="mt-40" id="men">
-            <Typography variant='h4' className="main-heading">Pant & Shirt's</Typography>
+            <Typography variant='h4' className="main-heading">Pant & Shirt</Typography>
             <ProductSlider products={pantShirts} slidesPerView={4} />
           </Box>
 
           <Box className="mt-40">
-            <Typography variant='h4' className="main-heading">Jeans & Tshirt's</Typography>
+            <Typography variant='h4' className="main-heading">Jeans & Tshirt</Typography>
             <ProductSlider products={jeansTshirts} slidesPerView={4} />
           </Box>
 
           <Box className="mt-40">
-            <Typography variant='h4' className="main-heading">Boy's Kid's</Typography>
+            <Typography variant='h4' className="main-heading">Boy Kids</Typography>
             <ProductSlider products={boykids} slidesPerView={4} />
           </Box>
         </Box>
