@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["pbg-admin.onrender.com"]
+        domains: ["pbgadmin.onrender.com"]
     }
 };
 
