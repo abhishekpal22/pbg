@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["pbgadmin.onrender.com"]
-    }
-};
-
-export default nextConfig;
+      remotePatterns: [
+        {
+          protocol: 'https', // or 'http', depending on your domain's protocol
+          hostname: 'pbgadmin.onrender.com',
+          pathname: '/**', // This will allow images from all paths under this domain
+        },
+      ],
+    },
+  };
+  
+  export default nextConfig;
+  

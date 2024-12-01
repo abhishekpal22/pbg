@@ -44,10 +44,12 @@ export default function Slider() {
                 key={data.id}
                 src={baseURL + data.url}
                 objectFit="cover"
+                objectPosition="center"
                 width={0}
                 height={0}
                 sizes="100vw"
                 layout="responsive"
+                // fill
                 placeholder="blur"
                 blurDataURL="data:..."
                 alt="pal-brothers-group"

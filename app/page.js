@@ -45,7 +45,7 @@ const Home = () => {
   const jeans = jeansData?.data
   const gKids = girlKData?.data
   const events = eventsData?.data
-  const tentBanners = tentBannerData?.data[0].image.url
+  const tentBanners = tentBannerData?.data[0]?.image.url
   const pantShirts = pantShirtData?.data
   const jeansTshirts = jeansTshirtData?.data
   const boykids = boyKidData?.data
@@ -133,7 +133,7 @@ const Home = () => {
             <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
               <Typography variant='h4' className="main-heading">Find our location on Map</Typography>
               <Card elevation={1}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.3445603349396!2d82.91964057450785!3d26.987648156867905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39912bf6a3247c4b%3A0x33fb8e61f02a7852!2zUGFsIEJyb3RoZXJzIFZhc3RyYWxheWEg4KSq4KS-4KSyIOCkrOCljeCksOCkpuCksOCljeCkuCDgpLXgpLjgpY3gpKTgpY3gpLDgpL7gpLLgpK8!5e0!3m2!1sen!2sin!4v1727117614009!5m2!1sen!2sin" height="193" style={{ width: "100%", border: "none" }} allowFullScreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" sx={{ border: 0 }}></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.3445603349396!2d82.91964057450785!3d26.987648156867905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39912bf6a3247c4b%3A0x33fb8e61f02a7852!2zUGFsIEJyb3RoZXJzIFZhc3RyYWxheWEg4KSq4KS-4KSyIOCkrOCljeCksOCkpuCksOCljeCkuCDgpLXgpLjgpY3gpKTgpY3gpLDgpL7gpLLgpK8!5e0!3m2!1sen!2sin!4v1727117614009!5m2!1sen!2sin" height="193" style={{ width: "100%", border: "none" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" sx={{ border: 0 }}></iframe>
                 <CardContent>
                   <Typography variant="body1" color="initial">Address:</Typography>
                   <Typography variant="body2" sx={{ fontWeight: 600 }} >
