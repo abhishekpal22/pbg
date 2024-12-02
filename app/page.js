@@ -45,7 +45,7 @@ const Home = () => {
   const jeans = jeansData?.data
   const gKids = girlKData?.data
   const events = eventsData?.data
-  const tentBanners = tentBannerData?.data[0]?.image.url
+  const tentBanners = tentBannerData?.data[0]?.image?.url
   const pantShirts = pantShirtData?.data
   const jeansTshirts = jeansTshirtData?.data
   const boykids = boyKidData?.data

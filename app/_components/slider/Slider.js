@@ -38,11 +38,11 @@ export default function Slider() {
         modules={[Navigation, Autoplay, Pagination]} className="main-slider">
         {
           getData?.data &&
-          images.map(data =>
-            <SwiperSlide key={data.id}>
+          images?.map(data =>
+            <SwiperSlide key={data?.id}>
               <Image
-                key={data.id}
-                src={data.url}
+                key={data?.id}
+                src={data?.url}
                 objectFit="cover"
                 objectPosition="center"
                 width={0}
