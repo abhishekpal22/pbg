@@ -65,7 +65,7 @@ export default function ProductSlider({ products, slidesPerView }) {
                                 {product.image &&
                                     <Box className="card-img">
                                         <CardMedia
-                                            image={baseURL + product.image.url}
+                                            image={product.image.url}
                                             // title={product.title}
                                             component="img"
                                             sx={{

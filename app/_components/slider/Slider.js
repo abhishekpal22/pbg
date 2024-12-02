@@ -42,7 +42,7 @@ export default function Slider() {
             <SwiperSlide key={data.id}>
               <Image
                 key={data.id}
-                src={baseURL + data.url}
+                src={data.url}
                 objectFit="cover"
                 objectPosition="center"
                 width={0}
