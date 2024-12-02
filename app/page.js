@@ -103,7 +103,7 @@ const Home = () => {
       <Box className="tent-main-banner mt-40" id="tent">
         <CardMedia
           sx={{ height: 300 }}
-          image={baseURL + tentBanners}
+          image={tentBanners}
           title="tent main banner"
         />
       </Box>
