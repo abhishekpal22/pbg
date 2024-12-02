@@ -19,7 +19,7 @@ const Header = () => {
     const baseURL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
     const { getData } = useGetData(`${baseURL}/api/logos?populate=*`)
-    const logo = getData?.data[0].image.url;
+    const logo = getData?.data[0]?.image.url;
 
 
     const scrollToSection = (e) => {
@@ -75,7 +75,7 @@ const Header = () => {
                         <Link href="/">
                             {logo &&
                                 <Image
-                                    src={baseURL + logo}
+                                    src={logo}
                                     width={200}
                                     height={50}
                                     alt="pal-brothers-group logo" />
