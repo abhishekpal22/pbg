@@ -51,7 +51,7 @@ export default function Slider() {
                 width={0}
                 height={0}
                 layout="responsive"
-                sizes="(max-width: 600px) 100vw, (min-width: 601px) 50vw" // Set sizes based on viewport width
+                sizes="(max-width: 600px) 100vw, (min-width: 601px) 100vw" // Set sizes based on viewport width
                 srcSet={` 
                   ${data?.url} 1x, 
                   ${data?.formats.medium.url} 1.5x`} // srcSet for different resolutions
