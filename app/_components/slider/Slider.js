@@ -19,10 +19,11 @@ import { mainSlider } from "@/app/utlis/apiUrls";
 
 export default function Slider() {
   const baseURL = process.env.NEXT_PUBLIC_STRAPI_URL;
-  
-  const { getData} = useGetData(mainSlider)
-  const images =  getData?.data.flatMap(items=> items.image)
-  
+
+  const { getData } = useGetData(mainSlider)
+  const images = getData?.data.flatMap(items => items.image)
+  console.log("medium", images);
+
   return (
     <>
       <Swiper navigation={true}
@@ -42,18 +43,21 @@ export default function Slider() {
             <SwiperSlide key={data?.id}>
               <Image
                 key={data?.id}
+                // Default image source (low resolution for small screens or a fallback image)
                 src={data?.url}
+                alt={data?.name}
                 objectFit="cover"
                 objectPosition="center"
                 width={0}
                 height={0}
-                sizes="100vw"
                 layout="responsive"
-                // fill
+                sizes="(max-width: 600px) 100vw, (min-width: 601px) 50vw" // Set sizes based on viewport width
+                srcSet={` 
+                  ${data?.url} 1x, 
+                  ${data?.formats.medium.url} 1.5x`} // srcSet for different resolutions
                 placeholder="blur"
-                blurDataURL="data:..."
-                alt="pal-brothers-group"
-                style={{ width: '100%', height: '100vh', objectFit: "cover", objectPosition: 'center' }}
+                blurDataURL="data:..." // Optional: base64 image for placeholder
+                style={{ width: '100%', height: '100vh', objectFit: 'cover', objectPosition: 'center' }}
               />
             </SwiperSlide>
           )

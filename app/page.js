@@ -1,30 +1,16 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import Slider from './_components/slider/Slider'
 import { Box, Card, CardContent, CardMedia, Container, Grid2, Typography } from '@mui/material'
 import ProductSlider from './_components/productslider/ProductSlider'
 import SpeedDial from '@mui/material/SpeedDial';
-import SpeedDialAction from '@mui/material/SpeedDialAction';
-import CallIcon from '@mui/icons-material/Call';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import useGetData from './utlis/customHooks/useGetData'
-import { boyKid, customerSay, decoration, event, girl_kids, jeans_top, jeansTshirt, kurti_frock, lehenga, pantShirt, saree, tentBanner, tentProduct } from './utlis/apiUrls'
+import { boyKid, decoration, event, girl_kids, jeans_top, jeansTshirt, kurti_frock, lehenga, pantShirt, saree, tentBanner, tentProduct } from './utlis/apiUrls'
 import Review from './_components/customerReview/Review'
+import { Call } from '@mui/icons-material'
 
-const actions = [
-  { icon: <WhatsAppIcon />, name: 'WhatsApp' },
-];
 const Home = () => {
   const baseURL = process.env.NEXT_PUBLIC_STRAPI_URL;
-
-  const [open, setOpen] = useState(true);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const wahts = () => {
-    if (window.confirm("Are you want to caht with WahtsApp:")) {
-      window.open("https://wa.me/+91-8317068171", "_blank")
-    }
-  }
 
   const { getData } = useGetData(saree)
   const { getData: lehengaData } = useGetData(lehenga)
@@ -38,7 +24,6 @@ const Home = () => {
   const { getData: boyKidData } = useGetData(boyKid)
   const { getData: decorationData } = useGetData(decoration)
   const { getData: tentProductData } = useGetData(tentProduct)
-  const { getData: customerSayData } = useGetData(customerSay)
   const sarees = getData?.data
   const lehengas = lehengaData?.data
   const kurties = kurtiData?.data
@@ -51,7 +36,6 @@ const Home = () => {
   const boykids = boyKidData?.data
   const decorations = decorationData?.data
   const tentProducts = tentProductData?.data
-  const customerSays = customerSayData?.data
 
 
   return (
@@ -128,7 +112,7 @@ const Home = () => {
           <Grid2 container spacing={2}>
             <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
               <Typography variant='h4' className="main-heading">What Customer Says</Typography>
-              <Review/>
+              <Review />
             </Grid2>
             <Grid2 size={{ xs: 12, md: 6, lg: 6 }}>
               <Typography variant='h4' className="main-heading">Find our location on Map</Typography>
@@ -149,22 +133,13 @@ const Home = () => {
 
         <SpeedDial
           ariaLabel="SpeedDial controlled open example"
-          sx={{ position: 'fixed', bottom: 30, right: 20 }}
-          icon={<CallIcon />}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          open={open}
-        >
-          {actions.map((action) => (
-            <SpeedDialAction
-              sx={{ background: "#0cc143", color: "#fff" }}
-              key={action.name}
-              icon={action.icon}
-              tooltipTitle={action.name}
-              onClick={wahts}
-            />
-          ))}
-        </SpeedDial>
+          sx={{
+            position: 'fixed',
+            bottom: 30,
+            right: 20,
+          }}
+          icon={<a style={{display:"flex"}} href='tel:8317068171'><Call /></a>}
+        />
       </Container>
     </div>
   )
