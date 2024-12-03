@@ -50,7 +50,7 @@ const Review = () => {
                                 </Box>
                                 <Box className="review-body">
                                     <Typography variant='body1'>{item.description}</Typography>
-                                    <Typography variant='h6'>{item.name}</Typography>
+                                    <Typography variant='h6' className="reviewer-title">{item.name}</Typography>
                                 </Box>
                             </Box>
                         </SwiperSlide>
