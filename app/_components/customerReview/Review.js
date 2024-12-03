@@ -40,7 +40,7 @@ const Review = () => {
                             <Box className="review-wrapper">
                                 <Box className="review-img">
                                     <CardMedia
-                                        image={baseURL + item.image.url}
+                                        image={item.image.url}
                                         component="img"
                                         sx={{
                                             height: { xs: 100, md: 100, lg: 150 }, // Responsive height
