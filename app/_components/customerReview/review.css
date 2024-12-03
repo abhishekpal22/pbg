@@ -20,7 +20,7 @@ padding: 40px 60px ;
 .review-body{
     flex: 1 1 70%;
 }
-.reviewer-title{margin-top:16px}
+.reviewer-title{margin-top:16px;font-weight:600}
 @media(max-width:767px){
     .review-img img{
         width: 100px;
